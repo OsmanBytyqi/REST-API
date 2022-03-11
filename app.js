@@ -2,7 +2,11 @@ const express=require('express');
 const app=express();
 const mongoose=require('mongoose');
 const Router=require('./Routes/posts');
+const bodyParser=require('body-parser');
+
 require('dotenv/config');
+app.use(bodyParser.json());
+
 
 
 app.use('/posts',Router);
